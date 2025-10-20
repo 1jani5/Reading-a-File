@@ -49,5 +49,13 @@ namespace Reading_a_File
         {
             DisplayToList();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lvShowText.Items.Clear();
+
+            MessageBox.Show("Successfully Uploaded!", "Upload", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
