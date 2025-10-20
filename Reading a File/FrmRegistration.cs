@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,10 +59,93 @@ namespace Reading_a_File
                 cbGender.SelectedIndex = 0;
         }
 
+        private void ClearFields()
+        {
+            txtStudentNo.Clear();
+            txtLastName.Clear();
+            txtFirstName.Clear();
+            txtMI.Clear();
+            txtAge.Clear();
+            txtContactNo.Clear();
+
+            cbProgram.SelectedIndex = -1;
+            cbGender.SelectedIndex = -1;
+
+            dtpBirthday.Value = DateTime.Now;
+
+            // Optional: put cursor back to Student No
+            txtStudentNo.Focus();
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+            string studentNo = txtStudentNo.Text;
+            string lastName = txtLastName.Text;
+            string firstName = txtFirstName.Text;
+            string middleInitial = txtMI.Text;
+            string program = cbProgram.Text;
+            string gender = cbGender.Text;
+            string age = txtAge.Text;
+            string birthday = dtpBirthday.Text;
+            string contactNo = txtContactNo.Text;
 
+            // Optional: validate
+            if (string.IsNullOrWhiteSpace(studentNo) || string.IsNullOrWhiteSpace(lastName))
+            {
+                MessageBox.Show("Please fill in all required fields.", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Make array of registration info
+            string[] registrationInfo =
+            {
+        "STUDENT REGISTRATION DETAILS",
+        "-----------------------------",
+        $"Student No.: {studentNo}",
+        $"Name: {lastName}, {firstName} {middleInitial}",
+        $"Program: {program}",
+        $"Gender: {gender}",
+        $"Age: {age}",
+        $"Birthday: {birthday}",
+        $"Contact No.: {contactNo}",
+        "-----------------------------",
+        "" // blank line
+    };
+
+            try
+            {
+
+                string projectRoot = Directory.GetParent(Application.StartupPath).Parent.Parent.FullName;
+                string folderPath = Path.Combine(projectRoot, "Files");
+
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                string filePath = Path.Combine(folderPath, FileName.SetFileName);
+
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    foreach (string line in registrationInfo)
+                    {
+                        writer.WriteLine(line);
+                    }
+                }
+
+                MessageBox.Show("Registration saved successfully to:\n" + filePath,
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving registration: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            this.ClearFields();
         }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -71,3 +155,4 @@ namespace Reading_a_File
         }
     }
 }
+

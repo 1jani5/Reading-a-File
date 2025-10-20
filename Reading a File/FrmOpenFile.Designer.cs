@@ -47,7 +47,7 @@
             // btnOpen
             // 
             this.btnOpen.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnOpen.Location = new System.Drawing.Point(231, 356);
+            this.btnOpen.Location = new System.Drawing.Point(275, 356);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(108, 43);
             this.btnOpen.TabIndex = 1;

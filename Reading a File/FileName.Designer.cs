@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.btnOkay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 46);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(528, 84);
-            this.textBox1.TabIndex = 0;
+            this.txtInput.Location = new System.Drawing.Point(30, 46);
+            this.txtInput.Multiline = true;
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(528, 84);
+            this.txtInput.TabIndex = 0;
             // 
             // label1
             // 
@@ -52,13 +52,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Enter FileName";
             // 
-            // textBox2
+            // txtFileName
             // 
-            this.textBox2.Location = new System.Drawing.Point(30, 184);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(528, 161);
-            this.textBox2.TabIndex = 2;
+            this.txtFileName.Location = new System.Drawing.Point(30, 184);
+            this.txtFileName.Multiline = true;
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(528, 161);
+            this.txtFileName.TabIndex = 2;
             // 
             // btnOkay
             // 
@@ -77,9 +77,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 450);
             this.Controls.Add(this.btnOkay);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtInput);
             this.Name = "FileName";
             this.Text = "FileName";
             this.ResumeLayout(false);
@@ -89,9 +89,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Button btnOkay;
     }
 }

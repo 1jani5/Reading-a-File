@@ -1,0 +1,12 @@
+qwe
+STUDENT REGISTRATION DETAILS
+-----------------------------
+Student No.: 123
+Name: qwer, qwe q
+Program: BS Computer Science
+Gender: Male
+Age: 12
+Birthday: Monday, 20 October 2025
+Contact No.: 12345
+-----------------------------
+
