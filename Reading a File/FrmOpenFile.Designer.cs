@@ -31,6 +31,7 @@
             this.lvShowText = new System.Windows.Forms.ListView();
             this.btnOpen = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lvShowText
@@ -38,13 +39,15 @@
             this.lvShowText.HideSelection = false;
             this.lvShowText.Location = new System.Drawing.Point(32, 28);
             this.lvShowText.Name = "lvShowText";
-            this.lvShowText.Size = new System.Drawing.Size(745, 297);
+            this.lvShowText.Size = new System.Drawing.Size(589, 297);
             this.lvShowText.TabIndex = 0;
             this.lvShowText.UseCompatibleStateImageBehavior = false;
+            this.lvShowText.View = System.Windows.Forms.View.List;
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(349, 364);
+            this.btnOpen.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnOpen.Location = new System.Drawing.Point(231, 356);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(108, 43);
             this.btnOpen.TabIndex = 1;
@@ -56,16 +59,29 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(453, 362);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "View Record";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FrmOpenFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(657, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.lvShowText);
             this.Name = "FrmOpenFile";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,6 +90,7 @@
         private System.Windows.Forms.ListView lvShowText;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

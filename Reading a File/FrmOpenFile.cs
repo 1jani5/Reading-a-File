@@ -44,5 +44,12 @@ namespace Reading_a_File
         {
         DisplayToList();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FileName fileName = new FileName(); 
+            fileName.Show();
+            this.Hide();
+        }
     }
 }
